@@ -72,44 +72,51 @@ public class BTNode<T>
     //-----------------------------------------------------------------
     public BTNode<T> find (T target)
     {
-        //BTNode<T> result = null;
-        T currRoot = rootT.getRootElement();
-        BTNode<T> temp = null;
+        BTNode<T> result = null;
+        
 
-        if(currRoot==null)
-            temp = null;
-        else
+        if(target == getElement())
         {
-            if(target == temp)
-            {
-                target = temp.getElement();
-                //return target;
-            }
-            else 
-            {
-                //target = currRoot;
-                temp = find(rootT.getLeft().getRootElement());
-                //target = find(rootT.getRight().getRootElement());
-                //if(temp=target)
-                //{
-                //    return temp;
-                //}
+            //target = temp.getElement();
+            return this;
+        }
+        else 
+        {
 
-            }
+            if (getLeft() != null)
+                result = getLeft().find(target);
+            
+            if (result == null && getRight() != null) 
+                result = getRight().find(target);
 
         }
 
-        return temp;
+        
+
+        return result;
     }
 
     //-----------------------------------------------------------------
     //  Returns the number of nodes in this subtree.
     //-----------------------------------------------------------------
-    public int count()throws UnsupportedOperationException
+    public int count()
     {
-        //TO - DO
+        //init the variable - 1 because it counts itself
+        int result = 1;
         
-        throw new UnsupportedOperationException();
+        //if there is a left leaf - get its count and add it.
+        if(left != null)
+        {
+            result += left.count();
+        }
+        
+        //add the right leaf count
+        if(right != null)
+        {
+            result += right.count();
+        }
+        
+        return result;
     }
 
     //-----------------------------------------------------------------
@@ -117,7 +124,7 @@ public class BTNode<T>
     //  specified iterator. This method does not print anything just
     //  performs the traversal
     //-----------------------------------------------------------------
-    public void inorder (ArrayIterator<T> iter)throws UnsupportedOperationException
+    public void inorder (ArrayIterator<T> iter)
     {
         //TO - DO
         iter.add(element);
@@ -129,7 +136,7 @@ public class BTNode<T>
         {
             right.inorder(iter);
         }
-        throw new UnsupportedOperationException();
+        //throw new UnsupportedOperationException();
     }
 
 }

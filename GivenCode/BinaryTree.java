@@ -120,6 +120,7 @@ public class BinaryTree<T>
         //TO-DO Make  if root is null throw a RUNTIMEEXCEPTION ("Get left failed. Tree is empty")
         if (root == null)
             throw new RuntimeException ("Get left failed. The tree is empty.");
+            
         return result;
     }
 
@@ -138,7 +139,8 @@ public class BinaryTree<T>
        //TO-DO Make  if root is null throw a RUNTIMEEXCEPTION ("Get right failed. Tree is empty")
        if (root == null)
             throw new RuntimeException ("Get right failed. The tree is empty.");
-        return result;
+            
+       return result;
     }
 
 
@@ -150,9 +152,9 @@ public class BinaryTree<T>
     public int size()
     {
         int result = 0;
-        root.count();
-        // TO DO -- calls the count method from BTNode
-
+        
+        result = root.count();
+        
         return result;
     }
     
@@ -163,12 +165,8 @@ public class BinaryTree<T>
     */
    public boolean isEmpty()
    {
-       //TO-DO 
-       boolean b = false;
-       if(!(root.getLeft()==null) || !(root.getRight()==null))
-       {b = true;}
-       return b;
-    }
+       return (root.getLeft()==null) && (root.getRight()==null);
+   }
 
     /**
     * Determines if tree is simply a leaf
