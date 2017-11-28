@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=ArrayIterator
+comment1.params=
+comment1.target=ArrayIterator()
+comment1.text=\n\ Sets\ up\ this\ iterator\ using\ the\ specified\ items.\n\ \n\ @param\ collection\ \ the\ collection\ to\ create\ the\ iterator\ for\n\ @param\ size\ \ \ \ \ \ \ \ the\ size\ of\ the\ collection\n
+comment2.params=
+comment2.target=boolean\ hasNext()
+comment2.text=\n\ Returns\ true\ if\ this\ iterator\ has\ at\ least\ one\ more\ element\n\ to\ deliver\ in\ the\ iteration.\n\n\ @return\ \ true\ of\ this\ iterator\ has\ at\ least\ one\ more\ element\ to\ deliver\n\ \ \ \ \ \ \ \ \ \ in\ the\ iteration\n
+comment3.params=
+comment3.target=java.lang.Object\ next()
+comment3.text=\n\ Returns\ the\ next\ element\ in\ the\ iteration.\ If\ there\ are\ no\n\ more\ elements\ in\ this\ iteration,\ a\ NoSuchElementException\ is\n\ thrown.\n\n\ @return\ \ the\ next\ element\ in\ the\ iteration\n\ @throws\ NoSuchElementException\ \ if\ an\ element\ not\ found\ exception\ occurs\n
+comment4.params=item
+comment4.target=void\ add(java.lang.Object)
+numComments=5
