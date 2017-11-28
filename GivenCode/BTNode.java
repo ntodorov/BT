@@ -132,7 +132,8 @@ public class BTNode<T>
         {
             left.inorder(iter);
         }
-        else if(right != null)
+
+        if(right != null)
         {
             right.inorder(iter);
         }

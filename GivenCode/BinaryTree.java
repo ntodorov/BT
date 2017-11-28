@@ -65,7 +65,14 @@ public class BinaryTree<T>
         root.setElement(value);
     }
 
-    
+
+    public BTNode<T> getRoot()    {
+        if (root == null)
+            throw new RuntimeException ("Get root operation "
+                + "failed. The tree is empty.");
+        return root;
+    }
+
     /**
      * Sets left subtree of the root of the tree.
      * 
