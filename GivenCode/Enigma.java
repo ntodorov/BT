@@ -18,7 +18,7 @@ public class Enigma {
     private BinaryTree<Character> bt;
 
     private String[] encArr;
-    private HashMap<Character, String> table;
+    
 
     /**
      * Constructor for objects of class Enigma
@@ -27,7 +27,7 @@ public class Enigma {
         // initialise instance variables - main root is # never used as per the requirements.
         bt = new BinaryTree<Character>('#');
 
-        table = new HashMap<Character, String>();
+       
 
         encArr = new String[26];
 
@@ -42,12 +42,7 @@ public class Enigma {
             }
         }
 
-        //fill up the encoding array
-        for (int i = 65; i <= 90; i++) {
-            String code = (String)table.get((char)i);
-
-            encArr[i - 65] = code;
-        }
+        
     }
 
     protected void processLine(String aLine) {
@@ -58,8 +53,9 @@ public class Enigma {
         char letter = parts[0].charAt(0);
         char[] morseCode = parts[1].toCharArray();
 
-        //fill the hashmap
-        table.put(letter, parts[1]);
+        //fill the array
+        encArr[(int)letter - 65] = parts[1];
+        
 
         //fill the tree
         addChar(letter, morseCode, 0, bt.getRoot());
@@ -140,10 +136,8 @@ public class Enigma {
 
     private String encodeChar(Character letter) {
 
-        table.getOrDefault(letter, "");
-
         //adding 3 spaces after the morse code
-        return table.getOrDefault(letter, "") + "   ";
+        return encArr[(int)letter - 65] + "   ";
     }
 
     public String encode(String aLine) {
